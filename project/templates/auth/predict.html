@@ -6,30 +6,49 @@
     <p class="m-2">
         Veuillez saisir les informations pour le traitement
         </p>
-	<div class="form-floating mb-3">
-		<input type="name" class="form-control" id="floatingInput" placeholder="Name">
-		<label for="floatingInput">Type de transaction</label>
-	</div>
-	<div class="form-floating mb-3">
-		<input type="surname" class="form-control" id="floatingInput" placeholder="Surname">
-		<label for="floatingInput">Montant</label>
-	</div>
-	<div class="form-floating mb-3">
-		<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-		<label for="floatingInput">Expéditeur</label>
-	</div>
-	<div class="form-floating">
-		<input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-		<label for="floatingPassword">Destinataire</label>
-	</div>
-		<div class="m-2">
-			<a href="#" class="btn btn-primary">Valider !</a>
-			<!--Un message de confirmation en cas de formulaire validée-->
+	<form class="form" action="" method="post">
+		<div class="form-floating mb-3">
+			<input type="name" class="form-control" name="feature1"  placeholder="Name">
+			<label for="floatingInput">Type de transaction</label>
 		</div>
+		<div class="form-floating mb-3">
+			<input type="surname" class="form-control" name="feature2"  placeholder="Surname">
+			<label for="floatingInput">Montant</label>
+		</div>
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" name="feature3"  placeholder="Expéditeur">
+			<label for="floatingInput">Expéditeur</label>
+		</div>
+	</form>
+	<div class="m-2">
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
+				Valider
+		  </button>
+	</div>
+
 		<p class="m-2">
-			<a href="#">Effacer le formulaire</a> <br><!--Page de FAQ-->
+			<a href="#" onclick=windows.reload()>Effacer le formulaire</a> <br><!--Page de FAQ-->
 			<a href="{{ url_for('index') }}">Return to Homepage</a>
 		</p>
 	
-</div>
+</div> 
+  <!-- Modal -->
+  <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h1 class="modal-title fs-5" id="ModalLabel">Résultat</h1>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  {{ result }}
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
 {% endblock %}
