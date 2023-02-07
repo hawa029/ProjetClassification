@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block header %}
+
+{% endblock %} {% block content %}
+<div class="container text-center">
+	<h1 class="p-5">{% block title %}Bank Observer{% endblock %}</h1>
+	<div class="card">
+		<h5 class="card-header pb-5">Bienvenue !</h5>
+		<div class="card-body">
+		  <h5 class="card-title pb-5">Détection de fraudes bancaires</h5>
+		  <p class="card-text">Cet algorithme analyse et détecte les transactions suceptibles d'être frauduleuses.
+			Après avoir entré vos identifiants de connexion, vous serez invité à entrer les informations à traiter. 
+			Quelques secondes finiront pour que le résultat que vous attendez soit affiché. 
+		  </p>
+		  	{% if g.user %}
+		  		<a href="{{ url_for('dashbord')}}" class="btn btn-primary">{{message}}</a>
+		  	{% else %}
+		  		<a href="{{ url_for('login') }}" class="btn btn-primary">Log In</a>
+			{% endif %}
+		</div>
+	  </div>
+</div>
+{% endblock %}
