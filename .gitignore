@@ -1,0 +1,9 @@
+env/
+*.pyc
+__pycache__
+fbapp/static/*.jpg
+app.db
+geckodriver.log
+.cache/
+project/
+.idea/
