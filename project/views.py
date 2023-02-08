@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
-import joblib
-import pandas as pd 
+import pickle
+from sklearn.tree import DecisionTreeClassifier
 import numpy as np
+import pandas as pd
 
 
 
@@ -47,25 +48,24 @@ def dashboard():
 
 # Les fichiers doivent être placés à la racine du projet
 # autrement ils sont introuvbales par Python !!!
-mdl1 = 'NearestNeighbors.joblib'
-mdl2 = 'LogisticRegression.joblib'
+mdl1 = 'DecisionTree.pkl'
+mdl2 = 'LogisticRegression.pkl'
 
-# Chargement du modèle
-with open(mdl2, 'rb') as model:
-    joblib.load(model)
+# On charge le modèle
+with open(mdl1, 'rb') as model:
+    model = pickle.load(model)
 
-@app.route('/auth/predict')
+@app.route('/auth/predict', methods=['POST'])
+def predict_post():
+    feature1 = int(request.form["feature1"])
+    #feature2 = float(request.form["feature2"])
+    #feature3 = (request.form["feature3"])
+
+    # Prédiction
+    prediction = model.predict(np.array([[feature1, 0]]))
+
+    return render_template('auth/prediction.html', prediction=prediction)
+
+@app.route('/auth/prediction')
 def predict():
-    if request.method == 'POST':
-        # Récupérer les données d'entrée à partir du corps de la requête
-        data = request.form
-        feature1 = data["feature1"]
-        feature2 = data["feature2"]
-        feature3 = data["feature3"]
-
-        # Prédiction
-        features = np.array([[feature1, feature2, feature3]])
-        result = model.predict(features)
-
-        return {"result" : result.tolist()}
     return render_template('auth/predict.html')
