@@ -3,7 +3,13 @@
 {% endblock %} {% block content %}
 <div class="container">
 	<h1 class="p-5">{% block title %}Prédiction{% endblock %}</h1>
-    <p class="m-2">
-      {{ prediction }}
-    </p>
+		<p class="m-2">
+			{{ prediction }}
+		</p>
+		<p class="m-2">
+			<a href="#">Ask for help!</a> <br>
+			<a href="{{ url_for('index') }}">Return to Homepage</a>
+		</p>
+		
+</div>
 {% endblock %}

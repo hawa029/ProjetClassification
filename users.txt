@@ -1,3 +1,0 @@
-users;mdp
-alice;1234
-bob;5678
