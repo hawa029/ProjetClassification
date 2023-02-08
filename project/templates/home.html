@@ -1,22 +1,48 @@
 {% extends 'base.html' %} {% block header %}
 
 {% endblock %} {% block content %}
-<div class="container text-center">
-	<h1 class="p-5">{% block title %}Bank Observer{% endblock %}</h1>
-	<div class="card">
-		<h5 class="card-header pb-5">Bienvenue !</h5>
-		<div class="card-body">
-		  <h5 class="card-title pb-5">Détection de fraudes bancaires</h5>
-		  <p class="card-text">Cet algorithme analyse et détecte les transactions suceptibles d'être frauduleuses.
-			Après avoir entré vos identifiants de connexion, vous serez invité à entrer les informations à traiter. 
-			Quelques secondes finiront pour que le résultat que vous attendez soit affiché. 
+<main>
+	<div class="container py-4">
+	  <div class="p-5 mb-4 rounded-3">
+		<div class="container-fluid py-4">
+		  <h1 class="display-5 fw-bold pb-3">BankObserver</h1>
+		  <p class="col-md-8 fs-4 ">
+			L'I.A analyse et détecte les transactions frauduleuses. <br>Finies les tentatives de fraudes <br> lors des opérations  bancaires <br>via mobile.
 		  </p>
 		  	{% if g.user %}
-		  		<a href="{{ url_for('dashbord')}}" class="btn btn-primary">{{message}}</a>
+			  <a href="{{ url_for('dashboard')}}" class="btn btn-warning btn-lg">{{ message }}</a>
 		  	{% else %}
-		  		<a href="{{ url_for('login') }}" class="btn btn-primary">Log In</a>
+			  <a href="{{ url_for('login')}}" class="btn btn-warning btn-lg">Log In</a>
 			{% endif %}
 		</div>
 	  </div>
-</div>
+  
+	  <div class="row align-items-md-stretch">
+		<div class="col-md-6">
+		  <div class="h-100 p-5 bg-info-subtle rounded-3">
+			<h2 class="fw-bold pb-3">Analyse de données</h2>
+			<p class="fs-4">Cette algorithme a été optimisé pour analyser rapidement un grand volume de données.</p>
+		  </div>
+		</div>
+		<div class="col-md-6">
+		  <div class="h-100 p-5  border rounded-3">
+			
+		  </div>
+		</div>
+	  </div>
+	  <div class="row align-items-md-stretch">
+		<div class="col-md-6">
+		  <div class="h-100 p-5  rounded-3">
+			
+		  </div>
+		</div>
+		<div class="col-md-6">
+		  <div class="h-100 p-5 bg-light border rounded-3">
+			<h2 class="fw-bold pb-3">Prédiction de fraude</h2>
+			<p class="fs-4">Il est aussi capable de traiter des données nouvelles via son formulaire intégré.</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </main>
 {% endblock %}
