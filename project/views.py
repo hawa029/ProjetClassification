@@ -33,7 +33,7 @@ mdl2 = 'LogisticRegression.pkl'
 mdl3 = 'model_adaBoost.pkl'
 
 # On charge le modèle
-with open(mdl1, 'rb') as model:
+with open(mdl2, 'rb') as model:
     model = pickle.load(model)
 
 @app.route('/auth/predict', methods=['POST'])
@@ -42,14 +42,19 @@ def predict_post():
     #feature2 = float(request.form["feature2"])
     #feature3 = (request.form["feature3"])
 
-    # Prédiction
+    # Prédiction sur une donnée
     x = np.array([[feature1], [0]])
-    prediction = model.predict(x)
+    model.predict(x)
 
+    good = 'cette transaction n\'est pas une fraude'
+    bad = 'Cette transaction est une fraude'
+
+    prediction = [good, bad]
     if x[0] == 0:
-        print('Cette transaction est une fraude')
+        
+        prediction = prediction[0]
     else:
-        print('cette transaction n\'est pas une fraude')
+        prediction = prediction[1]
 
     return render_template('auth/prediction.html', prediction=prediction)
 
