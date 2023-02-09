@@ -30,6 +30,7 @@ def dashboard():
 # autrement ils sont introuvbales par Python !!!
 mdl1 = 'DecisionTree.pkl'
 mdl2 = 'LogisticRegression.pkl'
+mdl3 = 'model_adaBoost.pkl'
 
 # On charge le modèle
 with open(mdl1, 'rb') as model:
@@ -44,6 +45,11 @@ def predict_post():
     # Prédiction
     x = np.array([[feature1], [0]])
     prediction = model.predict(x)
+
+    if x[0] == 0:
+        print('Cette transaction est une fraude')
+    else:
+        print('cette transaction n\'est pas une fraude')
 
     return render_template('auth/prediction.html', prediction=prediction)
 
