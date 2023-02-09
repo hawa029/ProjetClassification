@@ -8,23 +8,30 @@
         </p>
 	<form class="form" action="/auth/predict" method="post">
 		<div class="form-floating mb-3">
-			<input type="number" class="form-control" name="feature1"  placeholder="Name">
+			<input type="number" class="form-control" name="feature1"  placeholder="Nom">
 			<label for="floatingInput">Type de transaction</label>
 		</div>
 		<div class="form-floating mb-3">
-			<input type="number" class="form-control" name="feature2"  placeholder="Surname">
+			<input type="number" class="form-control" name="feature2"  placeholder="Prénom">
 			<label for="floatingInput">Montant</label>
 		</div>
 		<div class="form-floating mb-3">
 			<input type="text" class="form-control" name="feature3"  placeholder="Expéditeur">
 			<label for="floatingInput">Expéditeur</label>
 		</div>
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" name="feature4"  placeholder="Destinataire">
+			<label for="floatingInput">Destinataire</label>
+		</div>
 		<div class="m-2">
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">Envoyer</button>
 		</div>
 	</form>
 		<p class="m-2">
-			<a href="#" onclick=windows.reload()>Effacer le formulaire</a> <br><!--Page de FAQ-->
-			<a href="{{ url_for('index') }}">Return to Homepage</a>
+			<button type="button" onClick="window.location.reload()" class="btn btn-primary">
+				Effacer le formulaire
+			 </button>
+			  <br><!--Page de FAQ-->
+			<a href="{{ url_for('index') }}">Retour à l'accueil</a>
 		</p>
 {% endblock %}

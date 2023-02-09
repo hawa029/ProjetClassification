@@ -5,30 +5,30 @@
 	<div class="container py-4">
 	  <div class="row align-items-md-stretch" >
 		<div class="col-md-6">
-			
-				<img src="{{ url_for('static', filename='images/login.jpg')}}" class="img-fluid" alt="cubes tombant dans le vide">
-			
+			<img src="{{ url_for('static', filename='images/login.jpg')}}" class="img-fluid" alt="cubes tombant dans le vide">
 		</div>
 		<div class="col-md-6">
 		  <div class="h-100 p-5 bg-light border rounded-3">
-			<h2 class="fw-bold pb-3">Log In</h2>
+			<h2 class="fw-bold pb-3">Se connecter</h2>
 			<p class="py-4 fs-4">
-				Enter your credentials
+				Veuillez entrer vos identifiants de connexion
 				</p>
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingInput" placeholder="Your name">
-					<label for="floatingInput">Username</label>
-				  </div>
-				  <div class="form-floating">
-					<input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-					<label for="floatingPassword">Password</label>
-				  </div>
-				<p class="mt-2">
-					<a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg py-2">Enter</a>
-				</p>
+				<form action="{{ url_for('register')}}" method="post">
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" username="username">
+						<label for="floatingInput">Votre nom</label>
+					  </div>
+					  <div class="form-floating">
+						<input type="email" class="form-control" name="eamil">
+						<label for="floatingPassword">Votre email</label>
+					  </div>
+					<p class="mt-2">
+						<button type="submit"  class="btn btn-primary btn-lg py-2">Se connecter</button>
+					</p>
+				</form>
 				<p class="mt-2 pb-5">
-					<a href="#">Ask for help!</a> <br>
-					<a href="{{ url_for('index') }}">Return to Homepage</a>
+					<a href="#">Mot de passe oublié</a><br>
+					<a href="{{ url_for('index') }}">Retour de l'accueil</a>
 				</p>
 		  </div>
 		</div>
