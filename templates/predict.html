@@ -1,0 +1,103 @@
+{% extends 'base.html' %} {% block header %}
+
+{% endblock %} {% block content %}
+  <!--Main layout-->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="row center">
+        <h4 class="header col s12 light">Estimer le prix d'un véhicule d'occasion</h4>
+      </div>
+      <div class="row center">
+        <img src="{{ url_for('static', filename='images/vrtual-auto.jpg') }}" alt="voiture sortant d'un téléphone mobile">
+      </div>
+      <br>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col s12 m4">
+      <div class="icon-block">
+        
+        <h6 class="center">Connaitre la valeur approximative d'un véhicule</h6>
+  
+        <p class="light center">Nous mettons à votre disposition cet outil pour faire vos estimations et connaitre la valeur d'un véhicule sur le marché de l'occasion. Le formulaire ci-dessous est à compléter. Tous les champs ne sont pas obligatoires. Cependant, il peut être utile de les remplir pour accroitre les chances d'un résultat optimal</p>
+      </div>
+    </div>
+  </div>
+<!--Début du formulaire pour estimer le prix d'un véhicule-->
+<br>
+<div class="container">
+  <br><br>
+  <div class="row">
+    <!--Formulaire pour les features -->
+    <label>Marque</label>
+    <select class="browser-default">
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="1">Toyota</option>
+      <option value="2">Ford</option>
+      <option value="3">Peugeot</option>
+    </select>
+  </div>
+  <div class="row">
+    <!--Formulaire pour les features -->
+    <label>Kilométrage</label>
+    <select class="browser-default">
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="1">Entre 200 000 et 1 million</option>
+      <option value="2">Entre 150 000 et 200 000</option>
+      <option value="3">Entre 100 000 et 150 000</option>
+      <option value="4">Moins de 50 000</option>
+    </select>
+  </div>
+  <div class="row">
+    <!--Formulaire pour les features -->
+    <label>Année</label>
+    <select class="browser-default">
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="1">2019</option>
+      <option value="2">2014</option>
+      <option value="3">2009</option>
+      <option value="4">2004</option>
+      <option value="5">1998</option>
+    </select>
+  </div>
+  <div class="row">
+    <!--Formulaire pour les features -->
+    <label>Transmission</label>
+    <select class="browser-default">
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="1">Manuelle</option>
+      <option value="2">Automatique</option>
+    </select>
+  </div>
+  <div class="row">
+    <!--Formulaire pour les features -->
+    <label>Puissance réelle</label>
+    <select class="browser-default">
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="1">De 300 à plus</option>
+      <option value="2">De 200 et 300</option>
+      <option value="3">De 100 à 200</option>
+      <option value="4">De 50 à 100</option>
+      <option value="5">Moins de 50</option>
+    </select>
+  </div>
+  <div class="row">
+    <!--Formulaire pour les features -->
+    <label>Moteur</label>
+    <select class="browser-default">
+      <option value="" disabled selected>Choisissez une option</option>
+      <option value="1">Diesel</option>
+      <option value="2">Essence</option>
+      <option value="3">electrique</option>
+      <option value="4">CNG</option>
+      <option value="5">Gpl</option>
+    </select>
+  </div> 
+</div>
+<div class="row center">
+  <a href="{{ url_for('predict')}}"  class="btn-large waves-effect waves-light teal lighten-1">Estimer</a>
+</div>
+<br><br>
+</div>
+
+{% endblock %}

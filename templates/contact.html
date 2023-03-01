@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block header %}
+
+{% endblock %} {% block content %}
+
+<div class="row center">
+    <h4 class="header col s12 light">Contactez-nous</h4>
+</div>
+  <div class="container pt-60">
+    <div class="row">
+      <div class="col s6">
+        <div class="center">
+          <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="background contact" class="responsive-img">
+        </div>
+      </div>
+      <div class="col s6 bg-main">
+        <form action="#">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Nom complet</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email">Adresse mail</label>
+            </div>
+          </div>
+          <div class="row mb-0">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea2">Message</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 mt-25">
+              <button class="btn waves-effect waves-light" type="submit">Envoyer
+              <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

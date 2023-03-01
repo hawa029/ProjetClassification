@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block header %}
+
+{% endblock %} {% block content %}
+      <!--Main layout-->
+    <div class="container">
+        <div class="row center">
+          <h4 class="header col s12 light">Analyse du marché des véhicules d'occasion</h4>
+        </div>
+    </div>
+      <!--Graphique de visualisation des états du marché-->
+      <div class="container">
+        <div class="row center">
+          <div class='tableauPlaceholder' id='viz1677666346272' style='position: relative'>
+            <noscript>
+              <a href='#'>
+              <img alt='Compar Car ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NH&#47;NH2XPKBNG&#47;1_rss.png' style='border: none' class="responsive-img"/></a>
+            </noscript>
+            <object class='tableauViz'  style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+              <param name='embed_code_version' value='3' /> 
+              <param name='path' value='shared&#47;NH2XPKBNG' /> 
+              <param name='toolbar' value='no' /> 
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='language' value='fr-FR' />
+            </object>
+          </div>                
+          <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1677666346272');                    
+            var vizElement = divElement.getElementsByTagName('object')[0];                    
+            if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+            else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+            else { vizElement.style.width='100%';vizElement.style.height='1477px';}                     
+            var scriptElement = document.createElement('script');                    
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+          </script>
+        </div>
+      </div>
+
+      <br><br>
+      <!--Bouton d'appel pour accéder au formulaire d'estimation de coût-->
+      <div class="container">
+        <div class="row center">
+          <a href="{{ url_for('predict')}}"  class="btn-large waves-effect waves-light teal lighten-1">Faire une estimation</a>
+        </div>
+        <br><br>
+      </div>
+{% endblock %}
